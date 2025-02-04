@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-public class MapReduceEXample {
+public class MapReduceExample {
     public static void main(String[] args) {
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
         int sum1 = numbers.stream().mapToInt(i->i).sum();
@@ -24,6 +24,10 @@ public class MapReduceEXample {
 
         int maxVal2 = numbers.stream().reduce(Integer::max).get();
         System.out.println(maxVal2);
+
+        List <String> words = Arrays.asList("one", "two", "three", "four", "five");
+        String  largestWord = words.stream().reduce((word1, word2) -> word1.length()>word2.length()? word1 : word2).get();
+        System.out.println(largestWord);
     }
 
 }
