@@ -28,6 +28,7 @@ public class MapReduceExample {
         List <String> words = Arrays.asList("one", "two", "three", "four", "five");
         String  largestWord = words.stream().reduce((word1, word2) -> word1.length()>word2.length()? word1 : word2).get();
         System.out.println(largestWord);
+
     }
 
 }
