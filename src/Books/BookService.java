@@ -12,12 +12,16 @@ public class BookService {
 //        Collections.sort(books, new myComparator() {}); - First approach for comparator
 
         // Second approach for comparator - with anon implimentation
-        Collections.sort(books, new Comparator<Book>() {
-            @Override
-            public int compare(Book o1, Book o2) {
-                return o1.getName().compareTo(o2.getName());
-            }
-        });
+//        Collections.sort(books, new Comparator<Book>() {
+//            @Override
+//            public int compare(Book o1, Book o2) {
+//                return o1.getName().compareTo(o2.getName());
+//            }
+//        });
+
+
+        // third approach - lambda expression
+        Collections.sort(books, (o1,o2) -> o1.getName().compareTo(o2.getName()));
         return books;
     }
     public static void main(String[] args) {
@@ -31,4 +35,4 @@ public class BookService {
 //    public int compare(Book o1, Book o2) {
 //        return o1.getName().compareTo(o2.getName());
 //    }
-}
+//}
